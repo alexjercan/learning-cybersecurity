@@ -8,6 +8,6 @@ wget ${script_url} -O ende.py -q
 wget ${password_url} -O pw.txt -q
 wget ${flag_url} -O flag.txt.en -q
 
-cat pw.txt | python ende.py -d flag.txt.en
+cat pw.txt | python ende.py -d flag.txt.en | grep -o 'picoCTF{.*}'
 
 rm ende.py pw.txt flag.txt.en
