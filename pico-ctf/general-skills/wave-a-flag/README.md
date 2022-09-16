@@ -4,7 +4,7 @@
 
 ## Description
 
-Can you invoke help flags for a tool or binary? [This program](https://mercury.picoctf.net/static/a00f554b16385d9970dae424f66ee1ab/warm) has extraordinarily helpful information...
+Can you invoke help flags for a tool or binary? This program has extraordinarily helpful information...
 
 ## Solution
 

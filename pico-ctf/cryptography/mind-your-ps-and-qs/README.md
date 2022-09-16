@@ -4,9 +4,7 @@
 
 ## Description
 
-In RSA, a small `e` value can be problematic, but what about `N`? Can you
-decrypt this?
-[values](https://mercury.picoctf.net/static/38f30029ab93478310e906d3d084a4c1/values)
+In RSA, a small `e` value can be problematic, but what about `N`? Can you decrypt this? values
 
 ## Solution
 
