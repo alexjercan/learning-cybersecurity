@@ -16,3 +16,4 @@ training vault is here: VaultDoorTraining.java
 
 ## Solution
 
+The flag is in the java file and gets printed to stdout
