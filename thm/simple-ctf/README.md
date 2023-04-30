@@ -38,4 +38,10 @@ we get
 
 next we can ssh into mitch's account
 
+we can use the same strategy as before and see which binaries have SUID
 
+`find / -user root -perm /4000`
+
+in this case it was vim
+
+so we can open vim and then run `:!bash` to open a shell with root user.
