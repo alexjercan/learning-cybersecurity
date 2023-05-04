@@ -30,9 +30,9 @@
 
 - then ssh as james
 
-### Root
-
 `ssh -i id_rsa james@<ip>` and enter the passphrase
+
+### Root
 
 - we can try to use overpass on the machine and list all passwords
 
