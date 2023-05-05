@@ -81,3 +81,32 @@ a class that extends object and in the `__reduce__` method return a tuple
 Full script `./expickle/exploit.py`.
 
 Next go to the home directory and cat the flag file.
+
+### Part 2
+
+It looks like we are logged in as `odoo` and we are inside a docker container.
+
+```
+HOSTNAME=b8a9bbf1f380
+DB_PORT=tcp://172.17.0.2:5432
+SHLVL=0
+DB_ENV_PG_MAJOR=9.4
+HOME=/var/lib/odoo
+OLDPWD=/var
+DB_NAME=/unkkuri-odoo/db
+DB_PORT_5432_TCP=tcp://172.17.0.2:5432
+DB_ENV_PGDATA=/var/lib/postgresql/data
+ODOO_RC=/etc/odoo/odoo.conf
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+DB_ENV_PG_VERSION=9.4.26-1.pgdg90+1
+DB_ENV_LANG=en_US.utf8
+ODOO_VERSION=10.0
+PWD=/
+DB_PORT_5432_TCP_ADDR=172.17.0.2
+DB_ENV_POSTGRES_PASSWORD=unkkuri-secret-pw
+DB_ENV_GOSU_VERSION=1.11
+TZ=UTC
+DB_PORT_5432_TCP_PORT=5432
+DB_ENV_POSTGRES_USER=odoo
+DB_PORT_5432_TCP_PROTO=tcp
+```
