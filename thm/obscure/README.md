@@ -110,3 +110,25 @@ DB_PORT_5432_TCP_PORT=5432
 DB_ENV_POSTGRES_USER=odoo
 DB_PORT_5432_TCP_PROTO=tcp
 ```
+
+Another interesting thing is that there is also a `172.17.0.1` host on the
+network. We can run the following to check.
+
+```
+for i in $(seq 1 254); do (ping -c 1 172.17.0.${i} | grep "64 bytes from" | grep -oE "([0-9]{1,3}[\.]){3}[0-9]{1,3}" &); done;
+```
+
+- `172.17.0.1` main server
+- `172.17.0.2` the postgresql database
+- `172.17.0.3` the odoo thing that we can access
+
+Nice it looks like we have `psql` so we can try to connect to pg. We can try to
+connect to the `main` db. Since we saw this name back when we were in the web
+odoo stuff. (Big brain, took me a lot of time to remember the name). I guess
+the password is obvious, but it is `unkkuri-secret-pw` look above.
+
+```
+psql postgresql://172.17.0.2:5432/main
+```
+
+I looked into the schemas but I could not find anything useful.
