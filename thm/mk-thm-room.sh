@@ -12,7 +12,7 @@ if [ ! -d $dirname ]
 then
     mkdir -p $dirname
 
-    echo "# $name\n\n[$name](https://tryhackme.com/room/)\n\n## Solution\n" > $dirname/README.md
+    printf "# $name\n\n[$name](https://tryhackme.com/room/)\n\n## Solution\n" > $dirname/README.md
 fi
 
 cd $dirname
