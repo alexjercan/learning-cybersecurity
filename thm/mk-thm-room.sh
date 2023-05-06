@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [ "$#" -ne 1 ]; then
     echo "Usage $0 \"<name>\""
     exit 1
@@ -8,10 +8,15 @@ name=$1
 
 dirname=$(echo -n $name | tr -c "[:alnum:]" "-" | tr '[:upper:]' '[:lower:]')
 
-mkdir -p $dirname
+if [ ! -d $dirname ]
+then
+    mkdir -p $dirname
+
+    echo "# $name\n\n[$name](https://tryhackme.com/room/)\n\n## Solution\n" > $dirname/README.md
+fi
+
 cd $dirname
 
-echo "# $name\n\n[$name](https://tryhackme.com/room/)\n\n## Solution\n" > README.md
 
 if command -v tmux-sessionizer &> /dev/null
 then
