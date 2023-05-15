@@ -54,7 +54,8 @@ However, this script doesn't work and I had to patch it
 ```
 
 (You can copy paste this into `patchfile.patch` and then run `patch
-CVE-2020-1938.py patchfile.patch` or get the script from my github).
+CVE-2020-1938.py patchfile.patch` or get the script from my
+[github](https://raw.githubusercontent.com/alexjercan/learning-cybersecurity/master/thm/tomghost/CVE-2020-1938.py)).
 
 Next you can run
 
