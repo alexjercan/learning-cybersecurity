@@ -14,5 +14,5 @@ sudo sed -i '$d' /etc/hosts
 or just run
 
 ```bash
-./solve.sh
+./solve.sh $IP
 ```
