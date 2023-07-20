@@ -1,18 +1,18 @@
 #!/bin/bash
 if [ "$#" -ne 1 ]; then
-    echo "Usage $0 \"<name>\""
+    echo "Usage $0 \"<id>\""
     exit 1
 fi
 
-name=$1
+id=$1
 
-dirname=$(echo -n $name | tr -c "[:alnum:]" "-" | tr '[:upper:]' '[:lower:]')
+dirname=$(echo -n $id | tr -c "[:alnum:]" "-" | tr '[:upper:]' '[:lower:]')
 
 if [ ! -d $dirname ]
 then
     mkdir -p $dirname
 
-    printf "# $name\n\n[$name](https://tryhackme.com/room/)\n\n## Solution\n" > $dirname/README.md
+    printf "# \n\n[TryHackMe Room](https://tryhackme.com/room/$id)\n\n## Solution\n" > $dirname/README.md
 fi
 
 cd $dirname
